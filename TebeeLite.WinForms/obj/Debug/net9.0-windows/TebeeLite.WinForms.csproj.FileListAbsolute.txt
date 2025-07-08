@@ -146,3 +146,8 @@ D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\Teb
 D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.User.AddUserForm.resources
 D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.User.EditUserForm.resources
 D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.ManageUsersForm.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Doctor.DoctorsForm.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.sourcelink.json
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Doctor.AddAndUpdateDactor.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Patients.PatientsForm.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Patients.AddAndUpdatePatient.resources

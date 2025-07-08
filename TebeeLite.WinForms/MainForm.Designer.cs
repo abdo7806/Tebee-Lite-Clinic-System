@@ -55,12 +55,14 @@
             btnPatients.Name = "btnPatients";
             btnPatients.Size = new Size(70, 24);
             btnPatients.Text = "المرضى";
+            btnPatients.Click += btnPatients_Click;
             // 
             // btnDoctors
             // 
             btnDoctors.Name = "btnDoctors";
             btnDoctors.Size = new Size(64, 24);
             btnDoctors.Text = "الأطباء";
+            btnDoctors.Click += btnDoctors_Click;
             // 
             // btnUsers
             // 

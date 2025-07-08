@@ -50,7 +50,7 @@ namespace TebeeLite.Application.Services
             };
         }
 
-        public async Task CreateAsync(UserCreateDto dto)
+        public async Task<UserReadDto> CreateAsync(UserCreateDto dto)
         {
             var user = new User
             {
@@ -60,10 +60,21 @@ namespace TebeeLite.Application.Services
                 RoleId = (int)dto.Role,
                 IsActive = true
             };
-            await _repo.AddAsync(user);
+            var createUser = await _repo.AddAsync(user);
+
+            if (createUser == null) return null;
+
+            return new UserReadDto
+            {
+                UserId = createUser.UserId,
+                Username = createUser.Username,
+                FullName = createUser.FullName,
+                IsActive = createUser.IsActive ?? false,
+                RoleName = createUser.Role?.RoleName ?? ""
+            };
         }
 
-        public async Task UpdateAsync(int id, UserUpdateDto dto)
+        public async Task<UserReadDto> UpdateAsync(int id, UserUpdateDto dto)
         {
             var user = await _repo.GetByIdAsync(id);
             if (user == null) throw new Exception("User not found");
@@ -73,10 +84,19 @@ namespace TebeeLite.Application.Services
             user.RoleId = (int)dto.Role;
             user.IsActive = dto.IsActive;
 
-            if (!string.IsNullOrWhiteSpace(dto.NewPassword))
-                user.PasswordHash = HashPassword(dto.NewPassword);
+            /*if (!string.IsNullOrWhiteSpace(dto.NewPassword))
+                user.PasswordHash = HashPassword(dto.NewPassword);*/
 
-            await _repo.UpdateAsync(user);
+           var updateUser = await _repo.UpdateAsync(user);
+
+            return new UserReadDto
+            {
+                UserId = updateUser.UserId,
+                Username = updateUser.Username,
+                FullName = updateUser.FullName,
+                IsActive = updateUser.IsActive ?? false,
+                RoleName = updateUser.Role?.RoleName ?? ""
+            };
         }
 
         public async Task<bool> DeleteAsync(int id)

@@ -121,14 +121,23 @@ namespace TebeeLite.WinForms.User
 
 
                 user.UserId = _userId;
-                await _userService.UpdateAsync(_userId, user);
-                MessageBox.Show("تم تحديث المستخدم بنجاح", "نجاح",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+              var response = await _userService.UpdateAsync(_userId, user);
+                if (response != null)
+                {
+                    MessageBox.Show("تم تحديث المستخدم بنجاح", "نجاح",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show($"حدث خطأ في التعديل:", "خطأ",
+    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
             catch (Exception ex)

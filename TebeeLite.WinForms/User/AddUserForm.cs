@@ -57,7 +57,7 @@ namespace TebeeLite.WinForms.User
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             if (!this.ValidateChildren())
             {
@@ -79,14 +79,22 @@ namespace TebeeLite.WinForms.User
 
             try
             {
-                _userService.CreateAsync(newUserDto);
-                MessageBox.Show("تم إنشاء المستخدم بنجاح");
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+               var response = await _userService.CreateAsync(newUserDto);
+                if (response != null)
+                {
+                    MessageBox.Show("تم إنشاء المستخدم بنجاح");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("خطأ في الاضافة: ", "خطأ في الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("خطأ: " + ex.Message);
+                MessageBox.Show("خطأ: " + ex.Message, "خطأ في الاضافة", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -16,7 +16,9 @@ namespace TebeeLite.Application.DTOs.User
 
         public bool IsActive { get; set; }
         // اختيارياً: كلمة المرور إذا تريد تعديلها
-        public string? NewPassword { get; set; }
+       // public string? NewPassword { get; set; }
+
+        public DateTime UpdatedAt { get; set; } = DateTime.Now;
     }
 
 }

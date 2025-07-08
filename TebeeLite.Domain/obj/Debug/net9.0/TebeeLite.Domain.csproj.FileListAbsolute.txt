@@ -9,3 +9,4 @@ D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\Teb
 D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\obj\Debug\net9.0\refint\TebeeLite.Domain.dll
 D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\obj\Debug\net9.0\TebeeLite.Domain.pdb
 D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\obj\Debug\net9.0\ref\TebeeLite.Domain.dll
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\obj\Debug\net9.0\TebeeLite.Domain.sourcelink.json

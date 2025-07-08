@@ -12,6 +12,8 @@ using TebeeLite.Application.Interfaces.Services;
 using TebeeLite.Application.Services;
 using TebeeLite.WinForms.User;
 using System.Configuration;
+using TebeeLite.WinForms.Doctor;
+using TebeeLite.WinForms.Patients;
 
 static class Program
 {
@@ -61,12 +63,19 @@ static class Program
         services.AddScoped<IRoleRepository, RoleRepository>();
         services.AddScoped<IRoleService, RoleService>();
 
+        services.AddScoped<IPatientRepository, PatientRepository>();
+        services.AddScoped<IPatientService, PatientService>();
+
         //  ”ÃÌ· «·›Ê—„«  (Forms)
         services.AddTransient<ManageUsersForm>();
         services.AddTransient<AddUserForm>();
         services.AddTransient<EditUserForm>();
         services.AddTransient<LoginForm>();
         services.AddTransient<MainForm>();
+        services.AddTransient<DoctorsForm>();
+        services.AddTransient<AddAndUpdateDactor>();
+        services.AddTransient<PatientsForm>();
+        services.AddTransient<AddAndUpdatePatient>();
         // ≈–« ⁄‰œﬂ Forms √Œ—Ï ”Ã·Â« Â‰«
     }
 }

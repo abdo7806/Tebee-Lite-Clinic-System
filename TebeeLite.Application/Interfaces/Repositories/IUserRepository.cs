@@ -12,8 +12,8 @@ namespace TebeeLite.Application.Interfaces.Repositories
         Task<List<User>> GetAllAsync();
         Task<User?> GetByIdAsync(int userId);
         Task<User?> GetByUsernameAsync(string username);
-        Task AddAsync(User user);
-        Task UpdateAsync(User user);
+        Task<User> AddAsync(User user);
+        Task<User> UpdateAsync(User user);
         Task<bool> DeleteAsync(int userId);
 
     }

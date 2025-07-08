@@ -29,26 +29,26 @@ partial class ManageUsersForm
     private void InitializeComponent()
     {
         components = new System.ComponentModel.Container();
-        dataGridView1 = new DataGridView();
+        dgvUsers = new DataGridView();
         contextMenuStrip1 = new ContextMenuStrip(components);
         تعديلToolStripMenuItem = new ToolStripMenuItem();
         حذفToolStripMenuItem = new ToolStripMenuItem();
         btnAdd = new Button();
-        ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
         contextMenuStrip1.SuspendLayout();
         SuspendLayout();
         // 
-        // dataGridView1
+        // dgvUsers
         // 
-        dataGridView1.BackgroundColor = Color.White;
-        dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridView1.ContextMenuStrip = contextMenuStrip1;
-        dataGridView1.Location = new Point(42, 136);
-        dataGridView1.Name = "dataGridView1";
-        dataGridView1.RowHeadersWidth = 51;
-        dataGridView1.Size = new Size(1045, 377);
-        dataGridView1.TabIndex = 0;
-        dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+        dgvUsers.BackgroundColor = Color.White;
+        dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvUsers.ContextMenuStrip = contextMenuStrip1;
+        dgvUsers.Location = new Point(42, 136);
+        dgvUsers.Name = "dgvUsers";
+        dgvUsers.RowHeadersWidth = 51;
+        dgvUsers.Size = new Size(1045, 377);
+        dgvUsers.TabIndex = 0;
+        dgvUsers.CellContentClick += dataGridView1_CellContentClick;
         // 
         // contextMenuStrip1
         // 
@@ -88,20 +88,20 @@ partial class ManageUsersForm
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(1132, 525);
         Controls.Add(btnAdd);
-        Controls.Add(dataGridView1);
+        Controls.Add(dgvUsers);
         Name = "ManageUsersForm";
         RightToLeft = RightToLeft.Yes;
         RightToLeftLayout = true;
         Text = "إدارة المستخدمين";
         Load += Form1_Load;
-        ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+        ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
         contextMenuStrip1.ResumeLayout(false);
         ResumeLayout(false);
     }
 
     #endregion
 
-    private DataGridView dataGridView1;
+    private DataGridView dgvUsers;
     private Button btnAdd;
     private ContextMenuStrip contextMenuStrip1;
     private ToolStripMenuItem تعديلToolStripMenuItem;

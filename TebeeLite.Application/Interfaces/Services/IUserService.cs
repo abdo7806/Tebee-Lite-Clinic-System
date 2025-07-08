@@ -12,8 +12,8 @@ namespace TebeeLite.Application.Interfaces.Services
         Task<List<UserReadDto>> GetAllAsync();
         Task<UserReadDto?> GetByIdAsync(int id);
         Task<UserReadDto?> GetByUsernameAsync(string username);
-        Task CreateAsync(UserCreateDto dto); 
-        Task UpdateAsync(int id, UserUpdateDto dto);
+        Task<UserReadDto> CreateAsync(UserCreateDto dto); 
+        Task<UserReadDto> UpdateAsync(int id, UserUpdateDto dto);
         Task<bool> DeleteAsync(int id);
     }
 

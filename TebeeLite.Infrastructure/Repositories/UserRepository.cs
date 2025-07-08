@@ -36,16 +36,33 @@ namespace TebeeLite.Infrastructure.Repositories
             return await _context.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.Username == username);
         }
 
-        public async Task AddAsync(User user)
+        public async Task<User> AddAsync(User user)
         {
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+            try
+            {
+                // نتحقق من ان مافي مستخدم بنفس البريد الاكتروني
+                int x = _context.Users.Where(u => u.Username == user.Username).Count();
+                if (x == 0)
+                {
+                    await _context.Users.AddAsync(user);
+                    await _context.SaveChangesAsync();
+                    return user;
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
         }
 
-        public async Task UpdateAsync(User user)
+        public async Task<User> UpdateAsync(User user)
         {
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
+            return user;
+
         }
 
         public async Task<bool> DeleteAsync(int userId)

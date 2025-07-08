@@ -23,7 +23,7 @@ public partial class ManageUsersForm : Form
     {
         var users = await _userService.GetAllAsync();
         // „À·« ⁄—÷ «·√ÿ»«¡ ›Ì DataGridView
-        dataGridView1.DataSource = users;
+        dgvUsers.DataSource = users;
     }
 
     private void button1_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ public partial class ManageUsersForm : Form
 
     private void  ⁄œÌ·ToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        int selectedUserId = Convert.ToInt32(dataGridView1.CurrentRow.Cells["UserId"].Value);
+        int selectedUserId = Convert.ToInt32(dgvUsers.CurrentRow.Cells[0].Value);
         var form = ActivatorUtilities.CreateInstance<EditUserForm>(_serviceProvider, selectedUserId);
         form.ShowDialog();
         Form1_Load(null, null);
@@ -67,7 +67,7 @@ public partial class ManageUsersForm : Form
 
     private async void Õ–›ToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        int UserID = (int)dataGridView1.CurrentRow.Cells[0].Value;
+        int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
         if (MessageBox.Show("Â· √‰  „ √ﬂœ √‰ﬂ  —Ìœ Õ–› „⁄—› «·„” Œœ„ = [" + UserID + "]", " √ﬂÌœ «·Õ–›", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
         {
             if (await _userService.DeleteAsync(UserID))

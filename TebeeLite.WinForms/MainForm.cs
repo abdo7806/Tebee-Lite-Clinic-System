@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TebeeLite.Application.DTOs.User;
 using TebeeLite.Application.Interfaces.Services;
+using TebeeLite.WinForms.Doctor;
+using TebeeLite.WinForms.Patients;
 using TebeeLite.WinForms.User;
 using static Hotel.Global_Classes.clsGlobal;
 
@@ -25,7 +27,7 @@ namespace TebeeLite.WinForms
             _serviceProvider = serviceProvider;
         }
 
-  
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -78,7 +80,27 @@ namespace TebeeLite.WinForms
             if (form.ShowDialog() == DialogResult.OK)
             {
                 // أعد تحميل المستخدمين
-               // Form1_Load(null, null);
+                // Form1_Load(null, null);
+            }
+        }
+
+        private void btnDoctors_Click(object sender, EventArgs e)
+        {
+            var form = _serviceProvider.GetRequiredService<DoctorsForm>();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                // أعد تحميل المستخدمين
+                // Form1_Load(null, null);
+            }
+        }
+
+        private void btnPatients_Click(object sender, EventArgs e)
+        {
+            var form = _serviceProvider.GetRequiredService<PatientsForm>();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                // أعد تحميل المستخدمين
+                // Form1_Load(null, null);
             }
         }
     }
