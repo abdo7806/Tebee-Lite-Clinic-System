@@ -1,0 +1,11 @@
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\bin\Debug\net9.0\TebeeLite.Domain.deps.json
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\bin\Debug\net9.0\TebeeLite.Domain.dll
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\bin\Debug\net9.0\TebeeLite.Domain.pdb
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\obj\Debug\net9.0\TebeeLite.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\obj\Debug\net9.0\TebeeLite.Domain.AssemblyInfoInputs.cache
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\obj\Debug\net9.0\TebeeLite.Domain.AssemblyInfo.cs
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\obj\Debug\net9.0\TebeeLite.Domain.csproj.CoreCompileInputs.cache
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\obj\Debug\net9.0\TebeeLite.Domain.dll
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\obj\Debug\net9.0\refint\TebeeLite.Domain.dll
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\obj\Debug\net9.0\TebeeLite.Domain.pdb
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.Domain\obj\Debug\net9.0\ref\TebeeLite.Domain.dll
