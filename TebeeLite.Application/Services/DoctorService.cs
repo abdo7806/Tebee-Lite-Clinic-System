@@ -34,7 +34,7 @@ namespace TebeeLite.Application.Services
                 UserId = doctor.UserId,
                 Username = doctor.User.Username,
                 FullName = doctor.User.FullName,
-                IsActive = doctor.User.IsActive,
+                IsActive = doctor.User.IsActive ?? false,
                 Specialization = doctor.Specialization,
                 YearsOfExperience = doctor.YearsOfExperience,
                 LicenseNumber = doctor.LicenseNumber,
@@ -58,7 +58,7 @@ namespace TebeeLite.Application.Services
                 UserId = doctor.UserId,
                 Username = doctor.User.Username,
                 FullName = doctor.User.FullName,
-                IsActive = doctor.User.IsActive,
+                IsActive = doctor.User.IsActive ?? false,
 
                 Specialization = doctor.Specialization,
                 LicenseNumber = doctor.LicenseNumber,

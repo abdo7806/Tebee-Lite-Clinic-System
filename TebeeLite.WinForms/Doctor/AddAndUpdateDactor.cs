@@ -66,7 +66,7 @@ namespace TebeeLite.WinForms.Doctor
                     txtConfirmPassword.Enabled = false;
 
 
-                    chkIsActive.Checked = _doctor.IsActive ?? false;
+                    chkIsActive.Checked = _doctor?.IsActive ?? false;
                     btnSave.Text = "تحديث";
                 }
                 else
@@ -113,6 +113,7 @@ namespace TebeeLite.WinForms.Doctor
                         Password = txtPassword.Text, // يتم التشفير داخل الخدمة
                         FullName = txtFullName.Text.Trim(),
                         Role = UserRoleEnum.Doctor,
+                        CreatedDate = DateTime.Now,
                         //IsActive = chkIsActive.Checked
                     };
 
@@ -163,7 +164,9 @@ namespace TebeeLite.WinForms.Doctor
                         FullName = txtFullName.Text.Trim(),
                         Username = txtUsername.Text.Trim(),
                         Role = UserRoleEnum.Doctor,
-                        IsActive = chkIsActive.Checked
+                        IsActive = chkIsActive.Checked,
+                        UpdatedAt = DateTime.Now
+
                     };
 
 

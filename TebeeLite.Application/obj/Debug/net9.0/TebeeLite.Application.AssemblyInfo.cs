@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TebeeLite.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54d1841d3cf065e8649a1ef0f0493d5b9a7149f0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a42991093450d64d3ebb467f8de7e992c4a60716")]
 [assembly: System.Reflection.AssemblyProductAttribute("TebeeLite.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TebeeLite.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

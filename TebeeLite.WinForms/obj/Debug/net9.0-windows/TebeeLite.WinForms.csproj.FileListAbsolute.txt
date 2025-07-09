@@ -151,3 +151,9 @@ D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\Teb
 D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Doctor.AddAndUpdateDactor.resources
 D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Patients.PatientsForm.resources
 D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Patients.AddAndUpdatePatient.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.User.ctrlUserCard.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.User.ShowUser.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Doctor.ctrlDoctorCard.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Doctor.ShowDoctor.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Patients.ctrlPatientCard.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Patients.PatientShow.resources

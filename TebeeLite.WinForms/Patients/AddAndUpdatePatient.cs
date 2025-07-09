@@ -154,7 +154,7 @@ namespace TebeeLite.WinForms.Patients
                         Dob = DateOnly.FromDateTime(dtpDob.Value), // Fixed CS0029 by converting DateTime to DateOnly  
                         Gender = cmbGender.Text,
                         Phone = txtPhone.Text,
-                        Email = txtEmail.Text,  
+                        Email = txtEmail.Text,
                         Address = txtAddress.Text,
                         BloodType = cmbBloodType.Text,
                         Notes = txtNotes.Text,
@@ -211,6 +211,11 @@ namespace TebeeLite.WinForms.Patients
             {
                 MessageBox.Show("خطأ: " + ex.Message, "خطأ في العملية", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

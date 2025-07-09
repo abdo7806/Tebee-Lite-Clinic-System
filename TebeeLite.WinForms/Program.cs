@@ -76,6 +76,10 @@ static class Program
         services.AddTransient<AddAndUpdateDactor>();
         services.AddTransient<PatientsForm>();
         services.AddTransient<AddAndUpdatePatient>();
+        services.AddTransient<ctrlUserCard>();
+        services.AddTransient<ShowUser>();
+        services.AddTransient<ShowDoctor>();
+        services.AddTransient<PatientShow>();
         // ≈–« ⁄‰œﬂ Forms √Œ—Ï ”Ã·Â« Â‰«
     }
 }

@@ -29,11 +29,7 @@ namespace TebeeLite.Application.DTOs.Doctor
 
         // تاريخ آخر تحديث لسجل الطبيب
         public DateTime? UpdatedAt { get; set; }
-        public bool? IsActive { get; set; }
-
-
-        // مجموعة من المواعيد المرتبطة بالطبيب
-        public virtual ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
+        public bool IsActive { get; set; }
 
 
     }
