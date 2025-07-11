@@ -15,8 +15,6 @@ public partial class Appointment
 
     public DateTime AppointmentDate { get; set; }
 
-    public string Status { get; set; } = null!;
-
     public string? Diagnosis { get; set; }
 
     public string? Treatment { get; set; }
@@ -27,6 +25,8 @@ public partial class Appointment
 
     public DateTime? UpdatedAt { get; set; }
 
+    public int? StatusId { get; set; }
+
     public virtual User? BookedByUser { get; set; }
 
     public virtual Doctor Doctor { get; set; } = null!;
@@ -36,4 +36,6 @@ public partial class Appointment
     public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
     public virtual ICollection<Prescription> Prescriptions { get; set; } = new List<Prescription>();
+
+    public virtual AppointmentStatus? Status { get; set; }
 }

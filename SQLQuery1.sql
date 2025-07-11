@@ -68,6 +68,8 @@ CREATE TABLE Prescriptions (
     FOREIGN KEY (AppointmentId) REFERENCES Appointments(AppointmentId)
 );
 
+
+
 -- ÃœÊ· PrescriptionItems
 CREATE TABLE PrescriptionItems (
     ItemId INT PRIMARY KEY IDENTITY(1,1),
@@ -133,3 +135,97 @@ CREATE TABLE AuditLogs (
 
 
 Scaffold-DbContext "Server=.;Database=TebeeLiteDB;User Id=sa;Password=123456;Trusted_Connection=true;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+
+
+
+-------------------------------
+
+
+
+ALTER TABLE Users
+ADD LastLogin DATETIME NULL;
+
+
+ALTER TABLE Users
+ADD Email NVARCHAR(100);
+
+
+
+CREATE TABLE AppointmentStatus (
+    StatusId INT PRIMARY KEY IDENTITY(1,1),
+    StatusName NVARCHAR(50) NOT NULL UNIQUE
+);
+
+INSERT INTO AppointmentStatus (StatusName)
+VALUES 
+('Scheduled'),
+('CheckedIn'),
+('Completed'),
+('Cancelled'),
+('NoShow');
+
+
+
+
+ALTER TABLE Appointments
+ADD StatusId INT;
+
+-- ‰”Œ «·ﬁÌ„ «·ﬁœÌ„… „ƒﬁ « ≈·Ï StatusId (·Ê ›Ì »Ì«‰« )
+
+-- À„ Õ–› «·⁄„Êœ «·ﬁœÌ„
+ALTER TABLE Appointments
+DROP COLUMN Status;
+
+-- —»ÿ «·⁄·«ﬁ…
+ALTER TABLE Appointments
+ADD CONSTRAINT FK_Appointments_Status
+FOREIGN KEY (StatusId) REFERENCES AppointmentStatus(StatusId);
+
+
+-- „·› ÿ»Ì»
+CREATE TABLE MedicalFiles (
+    FileId INT PRIMARY KEY IDENTITY(1,1),
+    PatientId INT NOT NULL,
+    FileName NVARCHAR(255),
+    FileType NVARCHAR(50),
+    FilePath NVARCHAR(500),
+    UploadedAt DATETIME DEFAULT GETDATE(),
+    Notes TEXT,
+    FOREIGN KEY (PatientId) REFERENCES Patients(PatientId)
+);
+
+
+
+-- ÃœÊ· Medications
+CREATE TABLE Medications (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(100) NOT NULL,
+    Description NVARCHAR(500),
+    DosageForm NVARCHAR(50),
+    Strength NVARCHAR(50)
+);
+
+
+
+
+ALTER TABLE PrescriptionItems
+ALTER COLUMN MedicationId INT NULL;
+
+
+
+ALTER TABLE PrescriptionItems ADD 
+    CustomMedicationName NVARCHAR(100) NULL,
+    CustomMedicationDescription NVARCHAR(500) NULL,
+    CustomDosageForm NVARCHAR(50) NULL,
+    CustomStrength NVARCHAR(50) NULL;
+
+
+ALTER TABLE PrescriptionItems 
+ADD CONSTRAINT FK_PrescriptionItems_Medications
+FOREIGN KEY (MedicationId) REFERENCES Medications(Id) 
+ON DELETE SET NULL;
+
+
+
+ALTER TABLE PrescriptionItems 
+ADD IsCustom BIT DEFAULT 0;

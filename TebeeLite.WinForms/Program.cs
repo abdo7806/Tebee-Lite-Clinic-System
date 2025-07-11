@@ -14,6 +14,7 @@ using TebeeLite.WinForms.User;
 using System.Configuration;
 using TebeeLite.WinForms.Doctor;
 using TebeeLite.WinForms.Patients;
+using TebeeLite.WinForms.Appointment;
 
 static class Program
 {
@@ -46,11 +47,13 @@ static class Program
     {
         //  ”ÃÌ· DbContext - ⁄œ· «·‹ connection string Õ”» »Ì∆ ﬂ
         services.AddDbContext<TebeeLiteDbContext>(options =>
-            options.UseSqlServer("Server=.;Database=TebeeLiteDB;User Id=sa;Password=123456;Trusted_Connection=true;TrustServerCertificate=True;"));
+            options.UseSqlServer("Server=.;Database=TebeeLiteDB;User Id=sa;Password=123456;Trusted_Connection=true;TrustServerCertificate=True;"),
+               ServiceLifetime.Transient);
 
-       /* services.AddDbContextFactory<TebeeLiteDbContext>(options =>
-    options.UseSqlServer("Server=.;Database=TebeeLiteDB;User Id=sa;Password=123456;Trusted_Connection=true;TrustServerCertificate=True;"));
-       */
+
+        /* services.AddDbContextFactory<TebeeLiteDbContext>(options =>
+     options.UseSqlServer("Server=.;Database=TebeeLiteDB;User Id=sa;Password=123456;Trusted_Connection=true;TrustServerCertificate=True;"));
+        */
         //  ”ÃÌ· «·—Ì»Ê Ê«·Œœ„«  („À«·)
         services.AddScoped<IDoctorRepository, DoctorRepository>();
          services.AddScoped<IDoctorService, DoctorService>();
@@ -66,6 +69,12 @@ static class Program
         services.AddScoped<IPatientRepository, PatientRepository>();
         services.AddScoped<IPatientService, PatientService>();
 
+        services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+        services.AddScoped<IAppointmentService, AppointmentService>();
+
+
+        services.AddScoped<IAppointmentStatusRepository, AppointmentStatusRepository>();
+        services.AddScoped<IAppointmentStateService, AppointmentStatusService>();
         //  ”ÃÌ· «·›Ê—„«  (Forms)
         services.AddTransient<ManageUsersForm>();
         services.AddTransient<AddUserForm>();
@@ -80,6 +89,9 @@ static class Program
         services.AddTransient<ShowUser>();
         services.AddTransient<ShowDoctor>();
         services.AddTransient<PatientShow>();
+        services.AddTransient<AppointmentsForm>();
+        services.AddTransient<AddAndUpdateAppointment>();
+        services.AddTransient<AppointmentDetails>();
         // ≈–« ⁄‰œﬂ Forms √Œ—Ï ”Ã·Â« Â‰«
     }
 }

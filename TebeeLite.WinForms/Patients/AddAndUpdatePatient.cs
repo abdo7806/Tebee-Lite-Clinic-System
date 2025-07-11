@@ -211,6 +211,7 @@ namespace TebeeLite.WinForms.Patients
             {
                 MessageBox.Show("خطأ: " + ex.Message, "خطأ في العملية", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+       
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

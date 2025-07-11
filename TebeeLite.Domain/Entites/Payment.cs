@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace TebeeLite.Infrastructure.Models;
 
+
 public partial class Payment
 {
     public int PaymentId { get; set; }

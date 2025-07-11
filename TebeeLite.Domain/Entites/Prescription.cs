@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 namespace TebeeLite.Infrastructure.Models;
-
 public partial class Prescription
 {
     public int PrescriptionId { get; set; }

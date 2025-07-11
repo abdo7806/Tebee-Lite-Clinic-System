@@ -76,6 +76,7 @@
             btnAppointments.Name = "btnAppointments";
             btnAppointments.Size = new Size(75, 24);
             btnAppointments.Text = "المواعيد";
+            btnAppointments.Click += btnAppointments_Click;
             // 
             // btnPayments
             // 

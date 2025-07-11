@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TebeeLite.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54d1841d3cf065e8649a1ef0f0493d5b9a7149f0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b949f384c1639d9806c54838df5edb87d778748")]
 [assembly: System.Reflection.AssemblyProductAttribute("TebeeLite.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TebeeLite.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

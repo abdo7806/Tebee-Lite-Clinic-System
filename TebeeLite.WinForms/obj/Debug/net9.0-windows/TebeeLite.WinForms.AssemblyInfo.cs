@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TebeeLite.WinForms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a42991093450d64d3ebb467f8de7e992c4a60716")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b949f384c1639d9806c54838df5edb87d778748")]
 [assembly: System.Reflection.AssemblyProductAttribute("TebeeLite.WinForms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TebeeLite.WinForms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

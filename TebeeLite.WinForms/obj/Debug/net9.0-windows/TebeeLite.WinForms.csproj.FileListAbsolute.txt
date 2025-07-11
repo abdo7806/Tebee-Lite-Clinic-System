@@ -157,3 +157,7 @@ D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\Teb
 D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Doctor.ShowDoctor.resources
 D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Patients.ctrlPatientCard.resources
 D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Patients.PatientShow.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Appointment.AppointmentsForm.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Appointment.AddAndUpdateAppointment.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Appointment.AppointmentDetails.resources
+D:\كورسات ابو هد هود\مشاريع github\TebeeLiteClinicSystem\TebeeLite.WinForms\obj\Debug\net9.0-windows\TebeeLite.WinForms.Appointment.ctrlAppointmentDetails.resources

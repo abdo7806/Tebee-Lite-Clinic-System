@@ -34,6 +34,7 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             تعديلToolStripMenuItem = new ToolStripMenuItem();
             حذفToolStripMenuItem = new ToolStripMenuItem();
+            عرضToolStripMenuItem = new ToolStripMenuItem();
             label2 = new Label();
             cbIsActive = new ComboBox();
             cbFilterBy = new ComboBox();
@@ -42,7 +43,6 @@
             lblCountRows = new Label();
             btnClose = new Button();
             dtFilter = new DateTimePicker();
-            عرضToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvDoctors).BeginInit();
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
@@ -78,21 +78,28 @@
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { تعديلToolStripMenuItem, حذفToolStripMenuItem, عرضToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.RightToLeft = RightToLeft.Yes;
-            contextMenuStrip1.Size = new Size(211, 104);
+            contextMenuStrip1.Size = new Size(116, 76);
             // 
             // تعديلToolStripMenuItem
             // 
             تعديلToolStripMenuItem.Name = "تعديلToolStripMenuItem";
-            تعديلToolStripMenuItem.Size = new Size(210, 24);
+            تعديلToolStripMenuItem.Size = new Size(115, 24);
             تعديلToolStripMenuItem.Text = "تعديل";
             تعديلToolStripMenuItem.Click += تعديلToolStripMenuItem_Click;
             // 
             // حذفToolStripMenuItem
             // 
             حذفToolStripMenuItem.Name = "حذفToolStripMenuItem";
-            حذفToolStripMenuItem.Size = new Size(210, 24);
+            حذفToolStripMenuItem.Size = new Size(115, 24);
             حذفToolStripMenuItem.Text = "حذف";
             حذفToolStripMenuItem.Click += حذفToolStripMenuItem_Click;
+            // 
+            // عرضToolStripMenuItem
+            // 
+            عرضToolStripMenuItem.Name = "عرضToolStripMenuItem";
+            عرضToolStripMenuItem.Size = new Size(115, 24);
+            عرضToolStripMenuItem.Text = "عرض";
+            عرضToolStripMenuItem.Click += عرضToolStripMenuItem_Click;
             // 
             // label2
             // 
@@ -170,13 +177,6 @@
             dtFilter.TabIndex = 16;
             dtFilter.Visible = false;
             dtFilter.ValueChanged += dtFilter_ValueChanged;
-            // 
-            // عرضToolStripMenuItem
-            // 
-            عرضToolStripMenuItem.Name = "عرضToolStripMenuItem";
-            عرضToolStripMenuItem.Size = new Size(210, 24);
-            عرضToolStripMenuItem.Text = "عرض";
-            عرضToolStripMenuItem.Click += عرضToolStripMenuItem_Click;
             // 
             // DoctorsForm
             // 

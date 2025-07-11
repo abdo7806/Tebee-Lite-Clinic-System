@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace TebeeLite.Infrastructure.Models;
 
+
 public partial class User
 {
     public int UserId { get; set; }
@@ -15,11 +16,15 @@ public partial class User
 
     public int RoleId { get; set; }
 
-    public bool? IsActive { get; set; } 
+    public bool? IsActive { get; set; }
 
     public DateTime? CreatedAt { get; set; }
 
     public DateTime? UpdatedAt { get; set; }
+
+    public DateTime? LastLogin { get; set; }
+
+    public string? Email { get; set; }
 
     public virtual ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
 

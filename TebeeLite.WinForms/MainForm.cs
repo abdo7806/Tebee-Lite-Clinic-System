@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TebeeLite.Application.DTOs.User;
 using TebeeLite.Application.Interfaces.Services;
+using TebeeLite.WinForms.Appointment;
 using TebeeLite.WinForms.Doctor;
 using TebeeLite.WinForms.Patients;
 using TebeeLite.WinForms.User;
@@ -97,6 +98,16 @@ namespace TebeeLite.WinForms
         private void btnPatients_Click(object sender, EventArgs e)
         {
             var form = _serviceProvider.GetRequiredService<PatientsForm>();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                // أعد تحميل المستخدمين
+                // Form1_Load(null, null);
+            }
+        }
+
+        private void btnAppointments_Click(object sender, EventArgs e)
+        {
+            var form = _serviceProvider.GetRequiredService<AppointmentsForm>();
             if (form.ShowDialog() == DialogResult.OK)
             {
                 // أعد تحميل المستخدمين

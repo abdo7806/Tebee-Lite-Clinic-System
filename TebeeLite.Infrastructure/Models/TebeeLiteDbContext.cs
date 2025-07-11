@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using TebeeLite.Infrastructure.Models;
 
-namespace TebeeLite.Infrastructure.Models;
+
 
 public partial class TebeeLiteDbContext : DbContext
 {
@@ -17,9 +18,15 @@ public partial class TebeeLiteDbContext : DbContext
 
     public virtual DbSet<Appointment> Appointments { get; set; }
 
+    public virtual DbSet<AppointmentStatus> AppointmentStatuses { get; set; }
+
     public virtual DbSet<AuditLog> AuditLogs { get; set; }
 
     public virtual DbSet<Doctor> Doctors { get; set; }
+
+    public virtual DbSet<MedicalFile> MedicalFiles { get; set; }
+
+    public virtual DbSet<Medication> Medications { get; set; }
 
     public virtual DbSet<Patient> Patients { get; set; }
 
@@ -49,7 +56,6 @@ public partial class TebeeLiteDbContext : DbContext
                 .HasColumnType("datetime");
             entity.Property(e => e.Diagnosis).HasColumnType("text");
             entity.Property(e => e.Notes).HasColumnType("text");
-            entity.Property(e => e.Status).HasMaxLength(50);
             entity.Property(e => e.Treatment).HasColumnType("text");
             entity.Property(e => e.UpdatedAt).HasColumnType("datetime");
 
@@ -66,6 +72,21 @@ public partial class TebeeLiteDbContext : DbContext
                 .HasForeignKey(d => d.PatientId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Appointme__Patie__4316F928");
+
+            entity.HasOne(d => d.Status).WithMany(p => p.Appointments)
+                .HasForeignKey(d => d.StatusId)
+                .HasConstraintName("FK_Appointments_Status");
+        });
+
+        modelBuilder.Entity<AppointmentStatus>(entity =>
+        {
+            entity.HasKey(e => e.StatusId).HasName("PK__Appointm__C8EE20638239BE39");
+
+            entity.ToTable("AppointmentStatus");
+
+            entity.HasIndex(e => e.StatusName, "UQ__Appointm__05E7698AC1BDD6F2").IsUnique();
+
+            entity.Property(e => e.StatusName).HasMaxLength(50);
         });
 
         modelBuilder.Entity<AuditLog>(entity =>
@@ -104,11 +125,40 @@ public partial class TebeeLiteDbContext : DbContext
                 .HasConstraintName("FK__Doctors__UserId__3E52440B");
         });
 
+        modelBuilder.Entity<MedicalFile>(entity =>
+        {
+            entity.HasKey(e => e.FileId).HasName("PK__MedicalF__6F0F98BFA35B4058");
+
+            entity.Property(e => e.FileName).HasMaxLength(255);
+            entity.Property(e => e.FilePath).HasMaxLength(500);
+            entity.Property(e => e.FileType).HasMaxLength(50);
+            entity.Property(e => e.Notes).HasColumnType("text");
+            entity.Property(e => e.UploadedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+
+            entity.HasOne(d => d.Patient).WithMany(p => p.MedicalFiles)
+                .HasForeignKey(d => d.PatientId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__MedicalFi__Patie__619B8048");
+        });
+
+        modelBuilder.Entity<Medication>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Medicati__3214EC07670501BD");
+
+            entity.Property(e => e.Description).HasMaxLength(500);
+            entity.Property(e => e.DosageForm).HasMaxLength(50);
+            entity.Property(e => e.Name).HasMaxLength(100);
+            entity.Property(e => e.Strength).HasMaxLength(50);
+        });
+
         modelBuilder.Entity<Patient>(entity =>
         {
             entity.HasKey(e => e.PatientId).HasName("PK__Patients__970EC366C0203737");
 
             entity.Property(e => e.Address).HasColumnType("text");
+            entity.Property(e => e.BloodType).HasMaxLength(10);
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
@@ -119,9 +169,8 @@ public partial class TebeeLiteDbContext : DbContext
             entity.Property(e => e.Notes).HasColumnType("text");
             entity.Property(e => e.Phone).HasMaxLength(20);
             entity.Property(e => e.UpdatedAt).HasColumnType("datetime");
-            entity.Property(e => e.BloodType).HasMaxLength(10);
         });
-        
+
         modelBuilder.Entity<Payment>(entity =>
         {
             entity.HasKey(e => e.PaymentId).HasName("PK__Payments__9B556A38E33FB1FD");
@@ -170,11 +219,20 @@ public partial class TebeeLiteDbContext : DbContext
         {
             entity.HasKey(e => e.ItemId).HasName("PK__Prescrip__727E838B7C63A37A");
 
+            entity.Property(e => e.CustomDosageForm).HasMaxLength(50);
+            entity.Property(e => e.CustomMedicationDescription).HasMaxLength(500);
+            entity.Property(e => e.CustomMedicationName).HasMaxLength(100);
+            entity.Property(e => e.CustomStrength).HasMaxLength(50);
             entity.Property(e => e.Dosage).HasMaxLength(50);
             entity.Property(e => e.Duration).HasMaxLength(50);
             entity.Property(e => e.Frequency).HasMaxLength(50);
             entity.Property(e => e.Instructions).HasColumnType("text");
-            entity.Property(e => e.MedicationName).HasMaxLength(100);
+            entity.Property(e => e.IsCustom).HasDefaultValue(false);
+
+            entity.HasOne(d => d.Medication).WithMany(p => p.PrescriptionItems)
+                .HasForeignKey(d => d.MedicationId)
+                .OnDelete(DeleteBehavior.SetNull)
+                .HasConstraintName("FK_PrescriptionItems_Medications");
 
             entity.HasOne(d => d.Prescription).WithMany(p => p.PrescriptionItems)
                 .HasForeignKey(d => d.PrescriptionId)
@@ -198,8 +256,10 @@ public partial class TebeeLiteDbContext : DbContext
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
+            entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.FullName).HasMaxLength(100);
             entity.Property(e => e.IsActive).HasDefaultValue(true);
+            entity.Property(e => e.LastLogin).HasColumnType("datetime");
             entity.Property(e => e.PasswordHash).HasMaxLength(255);
             entity.Property(e => e.UpdatedAt).HasColumnType("datetime");
             entity.Property(e => e.Username).HasMaxLength(100);

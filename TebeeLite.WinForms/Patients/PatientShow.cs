@@ -18,16 +18,14 @@ namespace TebeeLite.WinForms.Patients
 
         private readonly IPatientService _patientService;
 
-        private readonly IServiceProvider _serviceProvider;
 
         private int _PatientID = -1;
 
-        public PatientShow(IPatientService patientService, IServiceProvider serviceProvider, int patientId)
+        public PatientShow(IPatientService patientService, int patientId)
         {
             InitializeComponent();
             _patientService = patientService;
             _PatientID = patientId;
-            _serviceProvider = serviceProvider;
         }
   
         private async void PatientShow_Load(object sender, EventArgs e)
